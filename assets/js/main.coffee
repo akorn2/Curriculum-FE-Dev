@@ -4,6 +4,10 @@ Parallax = require 'parallax.js'
 Chart    = require 'chart.js'
 moment   = require 'moment'
 find     = require 'lodash.find'
+# Vivus    = require 'vivus'
+
+new Vivus('my-svg', {duration: 200}, myCallback)
+
 
 # code highlighting
 

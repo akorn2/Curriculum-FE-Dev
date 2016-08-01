@@ -1,0 +1,17 @@
+extends ../views/single_layout
+
+block content
+  :marked
+    ### Embeding SVG
+
+    Including SVGs into your dom can be confusing, at first. You must recognize, .svg are XML files. These are strings of code that can be embeded inline (inside *.html) or require a http call to be included.
+    
+    DOM selectors (css & js) can access *.svg elements if included inline. However, If *.svg is included via <object> or <img>, then the code is being injected with its own DOM. The solution links svg_style.css into the svg dom being injected. 
+    
+    ```*.svg
+    <?xml-stylesheet type="text/css" href="svg-stylesheet.css" ?>  
+    <svg>...</svg>
+    ```
+    
+    //- [Tutorial](http://tutorials.jenkov.com/svg/svg-gradients.html)
+    

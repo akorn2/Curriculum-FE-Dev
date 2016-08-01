@@ -1,0 +1,13 @@
+extends ../views/single_layout
+
+block content
+
+  :marked
+    ### Font Animation w/ Vivus
+    
+    [vivus](https://github.com/maxwellito/vivus)
+
+  //- object#my-svg(type='image/svg+xml' data='/img/examples/text_welcome.svg')
+  //- object#my-svg(type='image/svg+xml' data='/img/single/t1.svg')
+  svg#my-svg.container(viewbox='0 0 1000 600' xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink')
+    text(x='250' y='150' font-family='Verdana' font-size='55' fill='blue') Welcome!

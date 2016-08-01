@@ -11,7 +11,9 @@ html
     script.
       try{Typekit.load();}catch(e){}
     link(rel='stylesheet', href='/css/master.css')
+    link(rel='stylesheet', href='/css/svg.css')
   body(id= _path.match(/(\w+)\.html$/)[1])
     block content
 
-  script(src='/js/build.js')
+    script(src='/js/vivus.js')
+    script(src='/js/build.js')

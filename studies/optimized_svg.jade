@@ -1,0 +1,27 @@
+extends ../views/single_layout
+//- script(async='' src='//assets.codepen.io/assets/embed/ei.js')
+block content
+  h3 Portuguese Tiles
+  
+  :marked
+    To start, compressing svg files and converting to 64Bit will reduce your file size.
+    
+    [SVGO NPM Package](https://web-design-weekly.com/2014/10/22/optimizing-svg-web/)
+    
+  .icon
+    object(data='/img/tiles/adriana1.svg', type='image/svg+xml')
+        //fallback image
+    p(style="float:right; margin:0;") view on 
+        a(href="http://codepen.io/Schleichkorn/pen/NAwLgp") codepen
+
+  br
+  :marked
+    ### Inspired by anchient design
+
+    Many of these designs are inspired by real tiles. Bellow each svg tile I include a link to the original and credit the individual who provided the tile. Please send me more tiles! Personally I enjoy exploring the city, hunting for great design. Now friends have joined the hunt and we share much enjoyment from sharing our discoveries. Please send me pictures of tiles!
+
+    ### Advanced SVG Notes
+
+    SVG <use> symbol to create shapes causes rendering to take almost 50% slower. Refrence [Rohit Kalkur's](http://slides.com/rovolutionary/tuning-svg-performance-in-a-production-app#/14) study.
+
+    Resist nesting <use> symbols too deply. I
