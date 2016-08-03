@@ -1,0 +1,220 @@
+
+extends ../views/single_layout
+
+block content
+
+  :marked
+    #### React Basics
+    Current State: I've coded many sites with my stack of Jade, Less, Node, MongoDB, Markdown, Roots, and Keystone. This is great for creating static websites quickly. 
+    Motivation: To work with teams of developers, I need experience in the React.js ecosystem.
+    
+    #### Curriculum Goals
+    ---------
+    Specefic - Measurable - Attainable - Realistic - Timely
+    * Summarise React.Js's 'Getting Started Guide' (Sprint #1 to #x)
+    * Record video explaining React's role to a novice.
+    * Interview Developers, how the've used React. Record video reviewing use cases. (Sprint #x)
+    
+    #### Curriculum Criteria for Success
+    ---------
+    What does success look like?
+    
+    ### Outline
+    -------------
+    * (What is React's relationship with XML?)
+    * (What is React's relationship with JS?)
+    * (What is React's relationship with html?)
+    * (What is React's relationship with css?)
+    * (Setup Test Repository)[]
+    * (What methods create an object and inject it into the DOM?)
+    * (react redux to store)[]
+    * (react water)[]
+    * (jsx_syntax)[JSX Syntax]
+    
+    
+    ### What is React's relationship with XML?
+    ----------------------------------------------------
+    React compiles arrays of data into XML which is flushed inside the React.elemets and injected into the dom with ReactDOM.render
+    
+    
+    What is XML?
+    
+    ## XML does not do anything!
+    this XML document does not DO anything. XML is just information wrapped in tags. Someone must write a piece of software to send, receive, store, or display it:
+    
+    > *XML is a tool for storing and transporting data.*
+
+    This note is a note to Tove, from Jani, stored as XML:
+    
+    ```
+    <note>
+      <to>Tove</to>
+      <from>Jani</from>
+      <heading>Reminder</heading>
+      <body>Don't forget me this weekend!</body>
+    </note>
+    ```
+    
+    ## XML Does Not Use Predefined Tags
+    * The XML language has no predefined tags.
+    * The tags in the example above (like <to> and <from>) are not defined in any XML standard. These tags are "invented" by the author of the XML document.
+    * HTML works with predefined tags like ```<p>, <h1>, <table>, etc.```
+    * With XML, the author must define both the tags and the document structure.
+    
+    ## XML is Extensible
+    * You can add and remove fields without breaking the object
+    
+    > React passes in arrays of data, which is transcribed into XML and pushed into React Elements (composed html/css) which is injeceted into the dom with ReactDOM
+    
+    > BASICALLY, XML Requrires a bunch of syntax rules. For Optimized development tools like React compiles into syntax appropriate XML, HTML, CSS
+    
+    ```XML example:
+    <root>
+      <child>
+        <subchild>.....</subchild>
+      </child>
+    </root>
+    ```
+    In this example, note is the root:
+    ```
+    <?xml version="1.0" encoding="UTF-8"?>
+    <note>
+      <to>Tove</to>
+      <from>Jani</from>
+      <heading>Reminder</heading>
+      <body>Don't forget me this weekend!</body>
+    </note>
+    ```
+    XML structure reminds me of SVG files. Simply, swap note for svg.
+    
+    ## The XML Prolog
+    This line is called the XML Prolog
+    ```
+    <?xml version="1.0" encoding="UTF-8"?>
+    ```
+    * The XML prolog is optional. If it exists, it must come first in the document.
+    * XML documents can contain international characters, like Norwegian øæå or French êèé.
+    * To avoid errors, you should specify the encoding used, or save your XML files as UTF-8.
+    * UTF-8 is the default character encoding for XML documents.
+    * Character encoding can be studied in our Character Set Tutorial.
+    * *UTF-8 is also the default encoding for HTML5, CSS, JavaScript, PHP, and SQL.*
+    
+    #### XML must have closing tags
+    In html some elements might work well, even with a missing closing tag:
+    ```
+    <p>This is a paragraph.
+    <br>
+    ```
+    In XML, it is illegal to omit the closing tag. All elements must have a closing tag:
+    ```
+    <p>This is a paragraph.</p>
+    <br />
+    ```
+    
+    ### What is React's relationship with JS?
+    --------
+    
+    Babel is compiles into JS. Its useful for creating elegent React components.
+    
+    ReactDOM.render() is responsible for injecting js/babel elements into the dom.
+    ```
+    <script type="text/babel">
+      ReactDOM.render(
+        <h1>Hello, world!</h1>,
+        document.getElementById('example')
+      );
+    </script>
+    ```
+    
+    ### Naming Conventions
+    -----------------------
+    
+    Native HTML element names start with a lowercase letter, while custom React class names begin with an uppercase letter.
+    
+    ```
+    var CommentBox = React.createClass({
+      render: function() {
+        return (
+          <div className="commentBox">
+            Hello, world! I am a CommentBox.
+          </div>
+        );
+      }
+    });
+    ReactDOM.render(
+      <CommentBox />,
+      document.getElementById('content')
+    );
+    /* or */
+    ReactDOM.render(
+      <div className="commentBox">Hello, world! I am a CommentBox.</div> ,
+      document.getElementById('content')
+    );
+    ```
+    
+    ### JSX syntax a(name="jsx_syntax")
+    ---------------
+    JSX is a XML-ish syntax in your JavaScript. (Go into depth)[https://facebook.github.io/react/docs/jsx-in-depth.html]
+    
+    Challenge todo:
+    re-write this JSX syntax into vanila JavaScript.
+    ```
+    // tutorial1-raw.js
+    var CommentBox = React.createClass({displayName: 'CommentBox',
+      render: function() {
+        return (
+          React.createElement('div', {className: "commentBox"},
+            "Hello, world! I am a CommentBox."
+          )
+        );
+      }
+    });
+    ReactDOM.render(
+      React.createElement(CommentBox, null),
+      document.getElementById('content')
+    );
+    ```
+    
+    ### Setup Test Repository
+    ------------------------------
+    Create respository for my React.js experiments.
+    
+    I used this basic-template because XYZ ()[]
+    
+    ### What methods create an object and inject it into the DOM?
+    ------------------------------------------------------
+    Read documentation upon React.js Website.
+    
+    Insight: React.js is neat, because dom elements are composed from an array of attributes. This is ideal for interfacing with databases, customization of reusable components, and rapid production.
+    
+    Structure:
+    * Dom content is composed of React.createElement
+    * ReactJS.classes renders React.createElement
+    * ReactDOM.render injects a ReactJS.class into the dom.
+    
+    ```
+    var CommentBox = React.createClass({
+      render: function() {
+        return (
+          <div className="commentBox">
+            <h1>Comments</h1>
+            <CommentList />
+            <CommentForm />
+          </div>
+        );
+      }
+    });
+    ```
+    The JSX compiler will recognize the HTML tags and re-write them
+    
+    ```example:
+    <commentList /> /* this component is rewritten to: */
+    React.createElement(tagName: commentList)
+    or
+    React.createElement('div', {className: "commentList"},
+        "Hello, world! I am a CommentList."
+      )
+    ```
+    Question: what? "HTML components are regular React components, just like the ones you define, with one difference. The JSX compiler will automatically rewrite HTML tags to React.createElement(tagName) expressions and leave everything else alone."
+    Answer:
+    
