@@ -1,12 +1,33 @@
-extends ../views/single_layout
+extends ../../views/single_layout
 //- script(async='' src='//assets.codepen.io/assets/embed/ei.js')
 block content
-  h3 Portuguese Tiles
+  h3 Optimizing Vectors
   
   :marked
-    To start, compressing svg files and converting to 64Bit will reduce your file size.
+    1. png
+    2. svg
+    3. Compressed SVG
+    4. 64 basic
+    5. Web Font
     
-    [SVGO NPM Package](https://web-design-weekly.com/2014/10/22/optimizing-svg-web/)
+    For each:
+    
+    img(src="", alt="")
+    file size = x
+    pro = 
+    con =
+    
+    Overview - best format for:
+    * logo
+    * button
+    * graphic
+    * background
+    * animated logo
+    * animated button
+    * animated graphic
+    * animated background
+
+    [Tool = SVGO global NPM Package](https://web-design-weekly.com/2014/10/22/optimizing-svg-web/)
     
   .icon
     object(data='/img/tiles/adriana1.svg', type='image/svg+xml')
@@ -17,6 +38,7 @@ block content
   br
   :marked
     ### Inspired by anchient design
+    -------------------------------
 
     Many of these designs are inspired by real tiles. Bellow each svg tile I include a link to the original and credit the individual who provided the tile. Please send me more tiles! Personally I enjoy exploring the city, hunting for great design. Now friends have joined the hunt and we share much enjoyment from sharing our discoveries. Please send me pictures of tiles!
 
@@ -27,3 +49,14 @@ block content
     Resist nesting <use> symbols too deply. I
     
     [Advanced Comparitive Analysis](http://www.svgopen.org/2007/papers/BrowserPerformanceMeasures/index.html#S3)
+
+
+
+
+    ### SVG to Web Font
+    -------------------
+
+    Decrease file size by 300% by converting the svg into a web font.
+    
+    [Icomoon](https://icomoon.io/app/)
+    [css tricks](https://css-tricks.com/svg-sprites-use-better-icon-fonts/)
