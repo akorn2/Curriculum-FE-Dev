@@ -1,0 +1,573 @@
+
+extends ../../views/single_layout
+
+block content
+
+  :marked
+    #### React Basics
+    Current State: I've coded many sites with my stack of Jade, Less, Node, MongoDB, Markdown, Roots, and Keystone. This is great for creating static websites quickly. 
+    Motivation: To work with teams of developers, I need experience in the React.js ecosystem.
+    
+    #### Curriculum Goals
+    ---------
+    Specefic - Measurable - Attainable - Realistic - Timely
+    * Summarise code examples from React.Js's 'Getting Started Guide'
+    * Write any question I have, try to answer them or ask for help.
+    * Create challenges to revisit in a review session that identifies the gaps in my knowledge.
+    * Practice challenges until I pass 100%.
+    * Record video explaining React's value and basic methods to a novice.
+    * Record video explaining strengths and weaknesses of a foreign React code base to a novice team member and pro FE-Developer.
+    * Interview Developers, how the've used React. Record video reviewing use cases.
+    * Create a project proposal that utalizes react's strengths.
+    
+    #### Curriculum Criteria for Success
+    ---------
+    What does success look like?
+    Strong understanding of basics. Able to explain the strengths and best-practices of React to novice team members and pro-fe developers. To be able to archetecte and navigate foreign React code bases. To create components rapidly. To reuse other's components. To customize other's components.
+    
+    ### Outline
+    -------------
+    * (What is React?)
+    * (What is React's relationship with XML?)
+    * (What is React's relationship with JS?)
+    * (What is React's relationship with html?)
+    * (What is React's relationship with css?)
+    * (Setup Test Repository)[]
+    * (What methods create an object and inject it into the DOM?)
+    * (react redux to store)[]
+    * (react water)[]
+    * (jsx_syntax)[JSX Syntax]
+    * (Key tenents to React)[]
+    
+    
+    
+    ### What is React's relationship with XML?
+    ----------------------------------------------------
+    To understand React, lets compare it to languages we already know, and discuss how they relate to one another.
+    
+    ### What is React's relationship with XML?
+    ----------------------------------------------------
+    XML does not do anything! XML is just information wrapped in tags. Someone must write a piece of software to send, receive, store, or display it. React is this software's structure and framework.
+    
+    > *XML is a tool for storing and transporting data.*
+
+    * React's components are inspired by XML's non-specefic naming structure.
+    * XML is a data structure that can be passed into components.
+    * React is a software library/structure to send, receive, store, or display data.
+    
+    This note is a note to Tove, from Jani, stored as XML:
+    
+    ```
+    <note>
+      <to>Tove</to>
+      <from>Jani</from>
+      <heading>Reminder</heading>
+      <body>Don't forget me this weekend!</body>
+    </note>
+    ```
+    
+    ## XML Does Not Use Predefined Tags
+    * The XML language has no predefined tags.
+    * The tags in the example above (like <to> and <from>) are not defined in any XML standard. These tags are "invented" by the author of the XML document.
+    * HTML works with predefined tags like ```<p>, <h1>, <table>, etc.```
+    * With XML, the author must define both the tags and the document structure.
+    
+    ## XML is Extensible
+    * You can add and remove fields without breaking the object
+    
+    > React passes in arrays of data, which is transcribed into XML and pushed into React Elements (ed html/css) which is injeceted into the dom with ReactDOM
+    
+    > BASICALLY, XML Requrires a bunch of syntax rules. For Optimized development tools like React compiles into syntax appropriate XML, HTML, CSS
+    
+    ```XML example:
+    <root>
+      <child>
+        <subchild>.....</subchild>
+      </child>
+    </root>
+    ```
+    In this example, note is the root:
+    ```
+    <?xml version="1.0" encoding="UTF-8"?>
+    <note>
+      <to>Tove</to>
+      <from>Jani</from>
+      <heading>Reminder</heading>
+      <body>Don't forget me this weekend!</body>
+    </note>
+    ```
+    XML structure reminds me of SVG files. Simply, swap note for svg.
+    
+    #### The XML Prolog
+    This line is called the XML Prolog
+    ```
+    <?xml version="1.0" encoding="UTF-8"?>
+    ```
+    * The XML prolog is optional. If it exists, it must come first in the document.
+    * XML documents can contain international characters, like Norwegian øæå or French êèé.
+    * To avoid errors, you should specify the encoding used, or save your XML files as UTF-8.
+    * UTF-8 is the default character encoding for XML documents.
+    * Character encoding can be studied in our Character Set Tutorial.
+    * *UTF-8 is also the default encoding for HTML5, CSS, JavaScript, PHP, and SQL.*
+    
+    Question: Does React require a Prolog? No, because React is a functional language. We rely on requiring/embedding functions to call.
+    
+    #### XML must have closing tags
+    In html some elements might work well, even with a missing closing tag:
+    ```
+    <p>This is a paragraph.
+    <br>
+    ```
+    In XML and React, it is illegal to omit the closing tag. All elements must have a closing tag:
+    ```
+    <p>This is a paragraph.</p>
+    <br />
+    ```
+    
+    ### What is React's relationship with JS?
+    --------
+    
+    Babel is compiles into JS. Its useful for creating elegent React components.
+    
+    ReactDOM.render() is responsible for injecting js/babel elements into the dom.
+    ```
+    <script type="text/babel">
+      ReactDOM.render(
+        <h1>Hello, world!</h1>,
+        document.getElementById('example')
+      );
+    </script>
+    ```
+    
+    ### Naming Conventions
+    -----------------------
+    
+    Native HTML element names start with a lowercase letter, while custom React class names begin with an uppercase letter.
+    
+    ```
+    var CommentBox = React.createClass({
+      render: function() {
+        return (
+          <div className="commentBox">
+            Hello, world! I am a CommentBox.
+          </div>
+        );
+      }
+    });
+    ReactDOM.render(
+      <CommentBox />,
+      document.getElementById('content')
+    );
+    /* or */
+    ReactDOM.render(
+      <div className="commentBox">Hello, world! I am a CommentBox.</div> ,
+      document.getElementById('content')
+    );
+    ```
+    note: we use div className because these are the actual DOM nodes; they are instantiations of React div components
+    question = what are "instantiations"
+    research = You can think of these as markers or pieces of data that React knows how to handle. React is safe. We are not generating HTML strings so XSS protection is the default.
+    summary = Developer inputs data into React.elements which generate components injected into the DOM. An instantiation is an instance of a compent according to the specks of data inputed.
+    
+    ### Key tenents to React
+    ------------------------
+    Composable: You do not have to return basic HTML. You can return a tree of components that you (or someone else) built.
+    ```tree of components
+    var CommentBox = React.createClass({
+      render: function() {
+        return (
+          <div className="commentBox">
+            <h1>Comments</h1>
+            <CommentList />
+            <CommentForm />
+          </div>
+        );
+      }
+    });
+    ```
+    
+    ### JSX syntax a(name="jsx_syntax")
+    ---------------
+    JSX is a XML-ish syntax in your JavaScript. (Go into depth)[https://facebook.github.io/react/docs/jsx-in-depth.html]
+    
+    Challenge todo:
+    re-write this JSX syntax into vanila JavaScript.
+    ```
+    // tutorial1-raw.js
+    var CommentBox = React.createClass({displayName: 'CommentBox',
+      render: function() {
+        return (
+          React.createElement('div', {className: "commentBox"},
+            "Hello, world! I am a CommentBox."
+          )
+        );
+      }
+    });
+    ReactDOM.render(
+      React.createElement(CommentBox, null),
+      document.getElementById('content')
+    );
+    ```
+    ||||
+    
+    The JSX compiler will recognize the HTML tags and re-write them
+    
+    ```example:
+    <commentList /> /* this component is rewritten to: */
+    React.createElement(tagName: commentList)
+    or
+    React.createElement('div', {className: "commentList"},
+        "Hello, world! I am a CommentList."
+      )
+    ```
+    
+    ### Setup Test Repository
+    ------------------------------
+    Create respository for my React.js experiments.
+    
+    I used this basic-template because XYZ ()[]
+    
+    ### What methods create an object ?
+    ------------------------------------------------------
+    Read documentation upon React.js Website.
+    
+    Insight: React.js is neat, because dom elements are ed from an array of attributes. This is ideal for interfacing with databases, customization of reusable components, and rapid production.
+    
+    Structure:
+    * Dom content is ed of React.createElement
+    * ReactJS.classes renders React.createElement
+    
+    ```
+    var CommentBox = React.createClass({
+      render: function() {
+        return (
+          <div className="commentBox">
+            <h1>Comments</h1>
+            <CommentList />
+            <CommentForm />
+          </div>
+        );
+      }
+    });
+    ```
+
+    Question: what are tagName? Pollution?
+    Refrence: "HTML components are regular React components, just like the ones you define, with one difference. The JSX compiler will automatically rewrite HTML tags to React.createElement(tagName) expressions and leave everything else alone."
+    Answer:
+    
+    
+    ### What methods inject compenents into the DOM?
+    ------------------------------------------------
+    
+    ReactDOM.render() instantiates the root component, starts the framework, and injects the markup into a raw DOM element, provided as the second argument.
+    
+    ### Using Props
+    ---------------
+    Data passed from parent component to child can be accessed by the child as a 'property' variable. Express these variables with brackets ``` {} ```.
+
+    ```
+    var Comment = React.createClass({
+    render: function() {
+      return (
+        <div className="comment">
+          <h2 className="commentAuthor">
+            {this.props.author}
+          </h2>
+          {this.props.children}
+        </div>
+      );
+    }
+    });
+    ```
+    
+    Question: what is an example pas passing components inside braces ```{}```? Is this the same as passing a component through ```< />```
+    Situation: "By surrounding a JavaScript expression in braces inside JSX (as either an attribute or child), you can drop text or React components into the tree. "
+    Answer:
+
+    ### Component Properties
+    ----------------
+    We pass values to the author property to the comment component through the key of author.
+    The comment component will access the property through ```this.props.author``` and ```this.props.children```
+    ```
+    var CommentList = React.createClass({
+      render: function() {
+        return (
+          <div className="commentList">
+            <Comment author="Pete Hunt">This is one comment</Comment>
+            <Comment author="Jordan Walke">This is *another* comment</Comment>
+          </div>
+        );
+      }
+    });
+    ```
+    
+    ### Adding Markdown
+    -------------------
+    Markdown formats text - it is simplier than html. Copy is generally stored and written with markdown, so we need to filter it when being included in our component.
+    
+    The third party library 'ReMarkable' is required. We use the components ```rawMarkup``` key to pipe the data (```this.props.body```) through a conversion function.
+    ```
+    var Comment = React.createClass({
+        rawMarkup: function() {
+        var md = new ReMarkable();
+        var rawMarkup = md.render(this.props.body.toString());
+        return { _html: rawMarkup };
+        },
+        render: function() {
+            return (
+                <div className="comment">
+                    <h2 className="commentAuthor"> {this.props.author}</h2>
+                    <span dangerouslySetInnerHTML={this.rawMarkup()}>
+                </div>
+            )
+        }
+    })
+    ```
+    
+    Questions:
+    > Why do we return markup as a value of ```_html```?  What other keys does the react component contain? Why do we not call ```<span dangerouslySetInnerHTML={this.rawMarkup()._html} />```
+    
+    > is ```dangerouslySetInnerHTML``` recognized by React? or is this an example of React's XML-ish syntax. What does this mean? React does not care the label and will inject the code?
+    
+    > why does ```<script src="">``` not need a ```require='';```?
+    
+    ### Hooking up the Data Module
+    ------------------------------
+    
+    Data is generally passed through a server, but this example uses JSON object for local testing.
+    ```JavaScript
+    var data = [
+      {id: 1, author: "Pete Hunt", text: "This is one comment"},
+      {id: 2, author: "Jordan Walke", text: "This is *another* comment"}
+    ];
+    ```
+    Question: does it matter what we name CommentList's key? Is ```<CommentList data={this.props.data} />``` the same as ```<CommentList woff={this.props.data}>```?
+    Question: Our data.json is included through the ReactDOM.render, but before we hard-coded the values through the parent component. Could we also hard code values through the ReactDOM? Could we include the data.json through the parent component?
+    
+    Its wierd reading component properties from bottom of file upwards, but I'm assuming the data.json is being passed into ```ReactDOM.render(...CommentBox...{data}...)```and it's child component ```CommentList...{this.props.data}...```.
+    ```
+    var CommentBox = React.createClass({
+      render: function() {
+        return (
+          <div className="commentBox">
+            <h1>Comments</h1>
+            <CommentList data={this.props.data} />
+            <CommentForm />
+          </div>
+        );
+      }
+    });
+
+    ReactDOM.render(
+      <CommentBox data={data} />,
+      document.getElementById('content')
+    );
+    ```
+    > Question: The child component can access the data value through the key of ```{this.props.data.author}``` or ```{this.props.author}```?
+    
+    To simplify the object's key path, we re-map the key with a shortcut! ```.map(function(shortcut_name){ ... })```
+    This examples isolates the re-mapped child component from it's parent.
+    ```
+    var CommentList = React.createClass({
+      render: function() {
+        var commentNodes = this.props.data.map(function(comment) {
+          return (
+            <Comment author={comment.author} key={comment.id}>
+              {comment.text}
+            </Comment>
+          );
+        });
+        return (
+          <div className="commentList">
+            {commentNodes}
+          </div>
+        );
+      }
+    });
+    ```
+    
+    Challenge: Re-write this component to use a shorter value maping:
+    ```
+    var CommentList = React.createClass( function(comment){
+        render: function(){
+            return (
+            <div className="commentList">
+                <Comment author={this.porps.data.author} key={this.props.data.id}>
+                    {this.props.data.text}
+                </Comment>
+            </div>
+            );
+        }
+    });
+    ```
+    ### Fetching from the server
+    -----------------------------
+    This file is empty until the server responds. Upon receiving the data, this component will re-render itself.
+    ```
+    ReactDOM.render(
+      <CommentBox url="/api/comments" />,
+      document.getElementById('content')
+    );
+    ```
+    Question: Some where we execute a ```GET``` call to the server and load ```/api/comments``` to our local storage?
+    
+    ### Reactive State
+    -------------------
+    Challenge: What is {this.state} used for? Why do we mute the state?
+    Clarify: What is an exampled interaction we can implement utalizing mutable-states?
+    Clarify: When data is received.
+    
+    
+    Question: What does it mean that props are immutable? What functionality does this provide?
+    Question: What are mutable states? What functionality does this provide?
+    Answer: They are passed from the parent and are "owned" by the parent.
+    
+    ```{this.state}``` is mutable, which meals?
+    ```{this.setState()}``` updates the state values with what you pass through.
+    
+    Clarify: ```{this.state}``` is similar to ```{this.props}``` but it is updatable. How they different?
+    Question: Does ```{this.state}``` pass data values to it's children?
+    
+    ```
+    // tutorial12.js
+    var CommentBox = React.createClass({
+      getInitialState: function() {
+        return {data: []};
+      },
+      render: function() {
+        return (
+          <div className="commentBox">
+            <h1>Comments</h1>
+            <CommentList data={this.state.data} />
+            <CommentForm />
+          </div>
+        );
+      }
+    });
+    ```
+    
+    CommentBox.getInitialState features an initial data object containing an empty array.
+    CommentBox.componentDidMount loads a json data file from the server.
+    Question: ```url: this.props.url``` points the ajax call to a server location. Where do we decalare the location value?
+    Answer:
+    
+    Clarity: ajax features a setting called upon a successful call. The http's data is passed as a function paramenter.
+    Clarity: ```this.setState({data:data});``` injects the http's data as a value. Which is accessed through ```this.state.data```
+    
+    Question: Why is this necessary? ```.bind(this)```
+    Answer:
+    
+    Question What is ```xhr``` the value for?
+    Answer:
+    
+    Question: Is this running after render? What is the trigger?
+    Answer:
+    
+    Question: How does react read when to call ```componentDidMount```? Is the key recognized or is it the ```.setState```?
+    Answer: React calls the method ```componentDidMount``` after a component is rendered for the first time. 
+    
+    Question: Does ```.this.setState``` include a watcher behavior? How does this dynamically continue to update?
+    Answer:
+    
+    ```
+    // tutorial13.js
+    var CommentBox = React.createClass({
+      getInitialState: function() {
+        return {data: []};
+      },
+      componentDidMount: function() {
+        $.ajax({
+          url: this.props.url,
+          dataType: 'json',
+          cache: false,
+          success: function(data) {
+            this.setState({data: data});
+          }.bind(this),
+          error: function(xhr, status, err) {
+            console.error(this.props.url, status, err.toString());
+          }.bind(this)
+        });
+      },
+      render: function() {
+        return (
+          <div className="commentBox">
+            <h1>Comments</h1>
+            <CommentList data={this.state.data} />
+            <CommentForm />
+          </div>
+        );
+      }
+    });
+    ```
+
+    Question: Does placing ```getInitialState``` after ```loadCOmmentsFromServer``` wipe the http's data object with an empoty array?
+    Answer: No
+    
+    Summary: 
+    This loads comment's data every 2 seconds and passes it to ```CommentBox``` and accessed by ```this.state.data```
+    
+    Explain:
+    CommentBox features a data object. The object lives upon the server at ```url="/api/comments"```
+    ComponentBox loads the data object using the loadCommentsFromServer method. The ```url``` key's value is passed during ```ReactDom.render```
+    > question: How can the $.ajax call use information provided during the ```ReactDom.render``` method?
+    > answer(maybe): Is ```this.props``` a file structure and $.ajax is compiled using folder locations... then the method is executed during ```ReactDOM.render```?
+    > question: What if I do not declare data as an array in ```getInitialState```?
+    ```loadCommentsFromServer``` is a function wraping the ```$.ajax``` call returns the data object, which replaces the data placeholder stored in ```getInitialState.data```.
+    ```componentDidMount``` calls ```loadCommentsFromServer``` initially and upon an Interval, every 2seconds.
+    
+    ```
+    // tutorial14.js
+    var CommentBox = React.createClass({
+      loadCommentsFromServer: function() {
+        $.ajax({
+          url: this.props.url,
+          dataType: 'json',
+          cache: false,
+          success: function(data) {
+            this.setState({data: data});
+          }.bind(this),
+          error: function(xhr, status, err) {
+            console.error(this.props.url, status, err.toString());
+          }.bind(this)
+        });
+      },
+      getInitialState: function() {
+        return {data: []};
+      },
+      componentDidMount: function() {
+        this.loadCommentsFromServer();
+        setInterval(this.loadCommentsFromServer, this.props.pollInterval);
+      },
+      render: function() {
+        return (
+          <div className="commentBox">
+            <h1>Comments</h1>
+            <CommentList data={this.state.data} />
+            <CommentForm />
+          </div>
+        );
+      }
+    });
+
+    ReactDOM.render(
+      <CommentBox url="/api/comments" pollInterval={2000} />,
+      document.getElementById('content')
+    );
+    ```
+    
+    ```
+    // tutorial15.js
+    var CommentForm = React.createClass({
+      render: function() {
+        return (
+          <form className="commentForm">
+            <input type="text" placeholder="Your name" />
+            <input type="text" placeholder="Say something..." />
+            <input type="submit" value="Post" />
+          </form>
+        );
+      }
+    });
+    ```
+    
+    

@@ -1,0 +1,9 @@
+.center-this {
+     margin: auto 0;
+     position:absolute;
+     left:50%;
+     -moz-transform: translateX(-50%,0);
+     -ms-transform: translateX(-50%,0);
+     -webkit-transform: translateX(-50%,0);
+     transform:translate(-50%,0);
+   }
