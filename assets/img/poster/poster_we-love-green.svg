@@ -5,34 +5,53 @@
 	.font{font-family:'Arial-BoldMT'; fill:#FFFFFF;}
 	.small-font{font-size:9.9px;}
 	.font-large{font-size:56.2629px; fill:#5D5D5D;}
-	#background-container{fill:#ffffff; }
-	#background-side{fill:#333333;}
-	#background_featured_text{fill:none;}
+
+	#background-top{fill:#FED149;}
+	#background-bottom-right{fill:#eeeeee;}
+	#background-bottom-left{fill:#000;}
+	#background-text-center{fill:none;}
+	#background-container{fill:#ffffff; opacity:1; }
+
 	#featured_text{x="300"}
-	.font{fill:#90D0C8;}
+	<!-- .font{fill:#000;} -->
 	.st2{fill:#F8FFFF;}
 	.st3{fill:#5D5D5D;}
 	.st4{fill:#C2C2C2;}
+
+<!-- Load Animations -->
+	<!-- .animate-load-drop-down { animate: transoform(translate(0, -40) to translate(0, 40) } -->
+
+	.font-large{fill:#000;}
+	#featured-title path{fill:#fff;}
+	#2 path{fill:#ff0000;}
+	.text-small path{fill:#fff;}
+
+#profile-photo{
+x: 150;
+width: 600px;
+y: 560;
+height:440px;
+z-index:999;
+}
 </style>
-<g>
+
+	<text transform="matrix(0.5867 -0.1167 0.1951 0.9808 210.6703 486.3224) translate(0,5)" class="font font-large animate-load-drop-down">LETS PAIR PROGRAM</text>
+
 	<rect id="background-container" width="770" height="1000"/>
-	<polygon id="background-side" points="207.5,999.5 207.5,506.7 55.1,536 55.1,999.5 	"/>
-	<polygon id="background" points="717.1,0.6 717.1,337 55.1,464.1 55.1,0.5 	"/>
-	<polygon id="background_featured_text" points="55.1,535.5 717.1,408.4 717.1,337 55.1,464.1 	"/>
-	<rect id="title_text" x="278.9" y="65.7" width="235.2" height="206.8"/>
-	<path id="background-photo" d="M717.1,999.5V408.4l-509.6,98.3v492.8C211.2,999.5,717.1,999.5,717.1,999.5z"/>
+	<polygon id="background-bottom-left" points="207.5,999.5 207.5,506.7 55.1,536 55.1,999.5 	"/>
+	<polygon id="background-top" points="717.1,0.6 717.1,337 55.1,464.1 55.1,0.5 	"/>
+	<polygon id="background-text-center" points="55.1,535.5 717.1,408.4 717.1,337 55.1,464.1 	"/>
+	<path id="background-bottom-right" d="M717.1,999.5V408.4l-509.6,98.3v492.8C211.2,999.5,717.1,999.5,717.1,999.5z"/>
+	<!-- <rect id="title_text" x="278.9" y="65.7" width="235.2" height="206.8"/> -->
+
 	<text transform="matrix(1 0 0 1 107.8879 886.5)" class=" font small-font">AARON</text>
 	<text transform="matrix(1 0 0 1 86.1616 970)" class=" font small-font">SCHLEICHKORN</text>
+	<image style="overflow:visible;" width="140" height="140" xlink:href="../logos/small_version.png"  transform="matrix(0.3992 0 0 0.3992 98.0941 895.168)"></image>
+	<image id="profile-photo"  xlink:href="../logos/profile_personal.png" transform=""></image>
 
-		<image style="overflow:visible;" width="140" height="140" xlink:href="../../../../../Downloads/small version.png"  transform="matrix(0.3992 0 0 0.3992 98.0941 895.168)">
-	</image>
-	<g>
-		<text transform="matrix(0.5867 -0.1167 0.1951 0.9808 210.6703 486.3224)" class=" font font-large">LETS PAIR PROGRAM</text>
-	</g>
-</g>
-<g>
-	<path d="M368.7,137.8l-7.4-51.8h6.4l4.7,35.6l5.7-35.6h7.4l5.4,36.2l4.8-36.2h6.3l-7.5,51.8h-6.6L381.6,99l-6.2,38.8H368.7z"/>
-	<path d="M405.1,137.8V85.9h23v8.8h-16.7v11.5H427v8.7h-15.6V129h17.3v8.7H405.1z"/>
+<g id="featured-title">
+	<!-- <path d="M368.7,137.8l-7.4-51.8h6.4l4.7,35.6l5.7-35.6h7.4l5.4,36.2l4.8-36.2h6.3l-7.5,51.8h-6.6L381.6,99l-6.2,38.8H368.7z"/>
+	<path d="M405.1,137.8V85.9h23v8.8h-16.7v11.5H427v8.7h-15.6V129h17.3v8.7H405.1z"/> -->
 	<path d="M356.4,174.3l6.1,3.2c-0.9,5.7-2.5,9.9-4.6,12.6c-2.2,2.7-4.9,4.1-8.2,4.1c-4.1,0-7.5-2.4-10.2-7.1s-4-11.1-4-19.3
 		c0-8.6,1.3-15.3,4-20.1c2.7-4.8,6.2-7.2,10.5-7.2c3.8,0,6.9,1.9,9.2,5.6c1.4,2.2,2.5,5.4,3.2,9.5l-6.2,2.5
 		c-0.4-2.7-1.1-4.8-2.3-6.4c-1.2-1.6-2.6-2.3-4.2-2.3c-2.3,0-4.2,1.4-5.6,4.1c-1.4,2.8-2.1,7.2-2.1,13.4c0,6.6,0.7,11.2,2.1,14
@@ -59,7 +78,7 @@
 	<path d="M440.2,248.9v-51.4h6.3v42.7h15.6v8.7H440.2z"/>
 	<path d="M466.5,248.9V197h23v8.8h-16.7v11.5h15.6v8.7h-15.6v14.1h17.3v8.7H466.5z"/>
 </g>
-<g>
+<g id="2" class="text-small" transform="translate(0,20)">
 	<path d="M287,262l1.6-0.2c0.1,0.6,0.3,1,0.6,1.2c0.3,0.3,0.7,0.4,1.2,0.4c0.5,0,1-0.1,1.2-0.3c0.3-0.2,0.4-0.5,0.4-0.8
 		c0-0.2-0.1-0.4-0.2-0.5c-0.1-0.1-0.3-0.3-0.6-0.4c-0.2-0.1-0.6-0.2-1.4-0.4c-0.9-0.2-1.5-0.5-1.9-0.8c-0.5-0.5-0.8-1-0.8-1.7
 		c0-0.4,0.1-0.8,0.4-1.2c0.2-0.4,0.6-0.7,1-0.8c0.5-0.2,1-0.3,1.6-0.3c1,0,1.8,0.2,2.4,0.7c0.5,0.5,0.8,1.1,0.8,1.8l-1.7,0.1
@@ -131,7 +150,7 @@
 		c0.4,0,0.8-0.1,1.2-0.4C495.6,262.7,495.9,262.3,496,261.7z"/>
 	<path d="M501,264.7v-6.9h-2.5v-1.4h6.6v1.4h-2.5v6.9H501z"/>
 </g>
-<g>
+<g id="" class="text-small">
 	<path d="M362.7,77.2v-8.8h6v1.5h-4.3V72h3.7v1.5h-3.7v3.7H362.7z"/>
 	<path d="M370.2,77.2v-8.8h3.7c0.9,0,1.6,0.1,2.1,0.2c0.4,0.2,0.8,0.4,1,0.8c0.3,0.4,0.4,0.9,0.4,1.4c0,0.7-0.2,1.2-0.6,1.6
 		c-0.4,0.4-1,0.7-1.7,0.8c0.4,0.2,0.7,0.5,1,0.7c0.3,0.3,0.6,0.7,1,1.4l1.1,1.7H376l-1.3-1.9c-0.5-0.7-0.8-1.1-0.9-1.3

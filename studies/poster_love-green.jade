@@ -10,11 +10,12 @@ block content
     
   :marked
     This refrence
-    img(src='/img/poster/refrence-we-love-green.jpg')
-    
+  //- img(src='/img/poster/refrence-we-love-green.jpg')
+  //- Wrap design inside a Mobile-Phoe.svg
   .icon
     object(data='/img/poster/poster_we-love-green.svg', type='image/svg+xml')
         //fallback image
+        img(src='/img/poster/refrence-we-love-green.jpg')
     p(style="float:right; margin:0;") view on 
         a(href="") codepen
     
@@ -23,3 +24,6 @@ block content
     > You need to duplicate the text color as a fill property, since SVG does not understand the color CSS property. Actually, one don't have to duplicate. You can use the “fill: currentColor” rule, and it will inherit a value from the parents ‘color’ rule.
 
     ```<?xml version="1.0" encoding="utf-8"?>``` must go before ```<?xml-stylesheet...>```
+    
+    > Question: Is this SVG Cross-Browser safe? What can I do?
+    > Question: Should I optimize size further?
