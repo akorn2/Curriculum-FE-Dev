@@ -4,26 +4,37 @@ block content
   h3 Portuguese Tiles
   
   :marked
-    ### Digital Design inspired by our Enviroments
-
-    Challenge, centering the font inside an SVG?
+    ##Study Prompt 
+    Convert this layout-refrence to a Cross-Browser website.
+    
     
   :marked
     This refrence
   //- img(src='/img/poster/refrence-we-love-green.jpg')
   //- Wrap design inside a Mobile-Phoe.svg
   .icon
-    object(data='/img/poster/poster_we-love-green.svg', type='image/svg+xml')
+    //- object(data='/img/resources/cell.svg', type='image/svg+xml')
+    object(data='/img/poster/poster_we-love-green.svg', type='image/svg+xml',style='width:50%;')
         //fallback image
         img(src='/img/poster/refrence-we-love-green.jpg')
     p(style="float:right; margin:0;") view on 
         a(href="") codepen
+  .icon
+    
     
   :marked
-    What?
-    > You need to duplicate the text color as a fill property, since SVG does not understand the color CSS property. Actually, one don't have to duplicate. You can use the “fill: currentColor” rule, and it will inherit a value from the parents ‘color’ rule.
+    ## QUESTIONS
+    How to centering font inside an SVG?
+    partial Answer: don't use % inside of svg because they can be buggy. Plus SVG should use a locked artboard.
+    
+    Is this SVG Cross-Browser safe? What can I do?
+    
+    What parts of of the SVG methods are buggy? What should I avoid?
+    
+    Should I optimize size further?
+    
+    What is this talking about? You need to duplicate the text color as a fill property, since SVG does not understand the color CSS property. Actually, one don't have to duplicate. You can use the “fill: currentColor” rule, and it will inherit a value from the parents ‘color’ rule.
 
+    ## LEARNINGS
     ```<?xml version="1.0" encoding="utf-8"?>``` must go before ```<?xml-stylesheet...>```
     
-    > Question: Is this SVG Cross-Browser safe? What can I do?
-    > Question: Should I optimize size further?
