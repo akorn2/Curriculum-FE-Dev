@@ -4,14 +4,18 @@ block content
   h3 Portuguese Tiles
   
   :marked
-    ##Study Prompt 
-    Convert this layout-refrence to a Cross-Browser website.
+    ## Project Desired Outcome Prompt 
+    Convert this (layout-refrence)['/img/poster/refrence-we-love-green.jpg'] to a Cross-Browser friendly website.
+    
+    Challenge:
+    * Replicate refrence design as a mobile friendly SVG.
+    * Format the svg utalizing a style sheet
+    * Isolate CSS code that needs to be altered for desktop view.
+    * CSS runs new code if upon desktop.
+    * Display svg inside a container fitted for a mobile phone icon. Lock CSS to mobile.
+    * Display svg inside a container fitted for a desktop phone icon. Lock CSS to desktop.
     
     
-  :marked
-    This refrence
-  //- img(src='/img/poster/refrence-we-love-green.jpg')
-  //- Wrap design inside a Mobile-Phoe.svg
   .icon
     //- object(data='/img/resources/cell.svg', type='image/svg+xml')
     object(data='/img/poster/poster_we-love-green.svg', type='image/svg+xml',style='width:50%;')
@@ -29,6 +33,8 @@ block content
     
     Is this SVG Cross-Browser safe? What can I do?
     
+    Should I use <g> or <symbol> or neither?
+    
     What parts of of the SVG methods are buggy? What should I avoid?
     
     Should I optimize size further?
@@ -36,5 +42,31 @@ block content
     What is this talking about? You need to duplicate the text color as a fill property, since SVG does not understand the color CSS property. Actually, one don't have to duplicate. You can use the “fill: currentColor” rule, and it will inherit a value from the parents ‘color’ rule.
 
     ## LEARNINGS
-    ```<?xml version="1.0" encoding="utf-8"?>``` must go before ```<?xml-stylesheet...>```
+    Re-using code is the foundation of a talented Developer. Heres a note on including CSS rules inside of an file.svg
+    ```<?xml version="1.0" encoding="utf-8"?>``` must go before ```<?xml-stylesheet type="text/css" href="../../css/svg.css" ?>```
+    
+    The <defs> element serves as a container for referenced content. Graphics are defined inside <defs>, but need to be called by another element or attribute before they’re rendered to the screen. 
+    Wrap <g> to contain your graphic elements. To later reference the content you’ll add an id (not a class) to the grouping element ```<g id="reusable-paths">```
+    Instead of ```<g>``` you may also wrap elements inside of a ```<symbol>```.
+    
+    ```
+    <svg>
+    <defs>
+        <g id="reusable-paths"> 
+            <path.../>
+        </g> 
+        <linearGradient id="gradient">
+          <stop offset="20%" stop-color="#39F" />
+          <stop offset="90%" stop-color="#F3F" />
+        </linearGradient>
+        <symbol id="" viewport="">
+            <path.../>
+        </symbol>
+    </defs>
+    <rect x="1cm" y="1cm" width="6cm" height="1cm" fill="url(#gradient)" />
+    </svg>
+    ```
+    Question: Are there browser or device limitations to using ```<defs>```? Reusable ```<g>```? Reusable and viewports of ```<symbol>```?
+    Challenge: how a viewBox works on referenced elements next week when I talk about the marker element. The advantage is that you can create symbols that are easier to scale when they’re referenced and rendered. I’ll talk about symbols more too later in the year when I talk about creating SVG icons.
+    
     

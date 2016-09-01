@@ -1,70 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="../../css/svg-poster.css" ?>
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="770px" height="1000px" viewBox="0 0 770 1000" style="enable-background:new 0 0 770 1000;" xml:space="preserve">
 <style type="text/css">
-	.font{font-family:'Arial-BoldMT'; fill:#FFFFFF;}
-	.small-font{font-size:9.9px;}
-	.font-large{font-size:56.2629px; fill:#5D5D5D;}
-
-	#background-top{fill:#FED149;}
-	#background-bottom-right{fill:#eeeeee;}
-	#background-bottom-left{fill:#000;}
-	#background-text-center{fill:none;}
-	#background-container{fill:#ffffff; opacity:1; }
-
-	#featured_text{x="300"}
-	<!-- .font{fill:#000;} -->
-	.st2{fill:#F8FFFF;}
-	.st3{fill:#5D5D5D;}
-	.st4{fill:#C2C2C2;}
-
-<!-- Load Animations -->
-	<!-- .animate-load-drop-down { animate: transoform(translate(0, -40) to translate(0, 40) } -->
-
-	.font-large{fill:#000;}
-	#featured-title path{fill:#fff;}
-	#2 path{fill:#ff0000;}
-	.text-small path{fill:#fff;}
-
-#profile-photo{
-x: 150;
-width: 600px;
-y: 560;
-height:440px;
-z-index:999;
-}
-.cell{
-height:1000px;
-}
-.cell-content{
-height:800px;
-y:50px;
-}
-.boom{
-width:500px;
-height:800px;
-}
-
+#background-text-center {color:#000000;}
+.title {font-size: 85px; }
 </style>
 
 
+<!-- TODO
+1. MAKE ICON BIGGER
+2. Clean up CSS
 
+-->
+
+<rect class="background" x="140" y="25" width="475" height="950"/>
+
+<!-- Positions cell-contents inside of the cell.svg -->
 <g id="cell-contents" transform="scale(.55) translate(310,430)">
 
-	<text transform="matrix(0.5867 -0.1167 0.1951 0.9808 210.6703 486.3224) translate(0,5)" class="font font-large animate-load-drop-down">LETS PAIR PROGRAM</text>
-
+	<!-- CONTAINER -->
 	<rect id="background-container" width="770" height="1000"/>
-	<polygon id="background-bottom-left" points="207.5,999.5 207.5,506.7 55.1,536 55.1,999.5 	"/>
+
+	<!-- TOP -->
 	<polygon id="background-top" points="717.1,0.6 717.1,337 55.1,464.1 55.1,0.5 	"/>
-	<polygon id="background-text-center" points="55.1,535.5 717.1,408.4 717.1,337 55.1,464.1 	"/>
-	<path id="background-bottom-right" d="M717.1,999.5V408.4l-509.6,98.3v492.8C211.2,999.5,717.1,999.5,717.1,999.5z"/>
-	<!-- <rect id="title_text" x="278.9" y="65.7" width="235.2" height="206.8"/> -->
+
+	<text class="font-title font-title-large" x="120" y="165"> I'm AARON</text>
+	<text class="font-title font-title-small" x="120" y="230"> SCHLEICHKORN</text>
+
+	<!-- BOTTOM -->
+	<path id="background-bottom-right" d="M717.1,999.5V408.4l-509.6,98.3v492.8C211.2,999.5,717.s1,999.5,717.1,999.5z"/>
+	<polygon id="background-bottom-left" points="207.5,999.5 207.5,506.7 55.1,536 55.1,999.5 	"/>
 
 	<text transform="matrix(1 0 0 1 107.8879 886.5)" class=" font small-font">AARON</text>
 	<text transform="matrix(1 0 0 1 86.1616 970)" class=" font small-font">SCHLEICHKORN</text>
+
 	<image style="overflow:visible;" width="140" height="140" xlink:href="../logos/small_version.png"  transform="matrix(0.3992 0 0 0.3992 98.0941 895.168)"></image>
 	<image id="profile-photo"  xlink:href="../logos/profile_personal.png" transform=""></image>
+
+	<!-- TEXT IN CENTER -->
+	<polygon id="background-text-center" points="55.1,535.5 717.1,408.4 717.1,337 55.1,464.1 	"/>
+
+	<text transform="matrix(0.5867 -0.1167 0.1951 0.9808 210.6703 486.3224) translate(190,20)" class="font font-large animate-load-drop-down">FE DEV</text>
+
 </g>
+
 
 
 
