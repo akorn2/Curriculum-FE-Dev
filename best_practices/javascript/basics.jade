@@ -1,0 +1,35 @@
+//- extends ../../views/single_layout
+//- 
+//- block content
+//-   h3 Basics
+//-   :marked
+//-     Question: What is wrong with this code? Fix it!
+//-     ```console.log("Current weapon: " + isArthur ? "Excalibur" : "Longsword");```
+//-     
+//-     
+//-     Question: Why are we checking if this.swords already exists?
+//-     Answer: We cannot pass a sword into an non-existing array.
+//-     ```
+//-     var armory = { addSword: function (sword) {
+//-             this.swords = this.swords ? this.swords : [ ];
+//-             this.swords.push(sword);
+//-         }
+//-     };
+//-     ```
+//-     Question: Re-write above with an 'or' operator:
+//-     Answer: ``` this.swords = this.swords || [ ];```
+//-     
+//-     Question: With function above, add a 'Broadsword' to the armory.
+//-     Answer: armory.addSword(Braodsword);
+//-     
+//-     Question: What is returned? ```var test = "" || undefined; console.log(test);```
+//-     Answer: 'undefined' (because or operoator '||' takes last variable included).
+//-     
+//-     Question: Or operator '||' takes which values?
+//-     Answer: First true value or rightmost false value.
+//-     
+//-     Question: And operator '&&' takes which values?
+//-     Answer: First false value or rightmost true value.
+//-     
+//-     Question: Are all of these false values? 0 '' undefined?
+//-     Answer: Yes.

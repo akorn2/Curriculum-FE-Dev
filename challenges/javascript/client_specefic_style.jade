@@ -1,0 +1,16 @@
+extends ../../views/single_layout
+//- script(async='' src='//assets.codepen.io/assets/embed/ei.js')
+block content
+  h3 Landing Slide for audience
+  
+  :marked
+    Landing questions:
+    Culture: Portugal, Germany, Spain
+    if portugal $('background').css(src,portugal)
+    
+    
+    Season: Spring, Fall, Winter, Summer
+    if summer $('landing-container').css.add('summer');
+    - use SCSS to define landing sections style based on containers class.
+    - SCSS styles include typography (font, color)
+    
