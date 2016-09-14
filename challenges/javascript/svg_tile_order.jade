@@ -1,0 +1,35 @@
+extends ../../views/single_layout
+//- script(async='' src='//assets.codepen.io/assets/embed/ei.js')
+block content
+  
+    :marked
+        # Project Challenge
+        
+        In web browser, cqlient has a wall. Let us decorate it with tiles!
+        Choose from my tile library, 
+        Add tiles one by one down the row.
+        Add border tiles and center tiles.
+        
+        
+        
+        Create prototype functions to inject the tiles.
+        ```
+        SignalFire.prototype = {
+        addLogs: function ( numLogs ){
+        this.logsLeft += numLogs;
+        lightFire: function () {
+        alert("Whoooosh!");
+        }
+        }
+        smokeSignal: function () {
+        if (this.logStatus < this.message.length / 10){
+        alert("Not enough fuel to send " +
+        "the current message!);
+        else {
+        this.lightFire();
+        var x = this.message.length;
+        for(var i = 0; i<x; i++){
+        alert("(((" + this.message[i] + ")))");
+        if (i % 10 == 0 && i != 0){
+        this.logsLeft--;
+        ```
