@@ -2,23 +2,27 @@
 <svg class="tile" viewBox="0 0 915 625" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink">
 
 <style>
-.circle-outer { fill:#000; }
 
-.background, .circle-inner, .rectangle { fill:#ffffee;}
+.circle-outer { fill:#a76c3d; }
 
-.background-right { fill: red; }
+.background, .circle-inner, .rectangle { fill:#cabaac;}
+
+.background-right { fill: #8e404c; }
 </style>
 
 <rect class="background" width="565" height="625"/>
 <rect style="fill: url(#circles-pattern);" x="0" y="0" width="565" height="625"/>
-<rect style="fill: url(#horizontal-pattern)" x="0" y="-3" width="585" height="630"/>
+<rect style="fill: url(#horizontal-pattern)" x="0" y="-4" width="585" height="630"/>
 <rect style="fill: url(#vertical-pattern)" x="-13" y="0" width="585" height="625"/>
 
 <rect class="background-right" x="565" width="350" height="625"/>
 
 <text class="title" x="740" y="33%" alignment-baseline="middle" text-anchor="middle" style="font-family: Times New Roman; font-size: 24; fill: #fff;">
-  SVG text styling
+  Berlin Refrence
 </text>
+
+<image class="" x="740" y="65%" width="220" alignment-baseline="middle" xlink:href="assets/berlin_flag.svg"></image>
+<image class="" x="500" y="65" width="220"  xlink:href="refrences/berlin_1883.png"></image>
 
 <defs>
 
@@ -35,6 +39,7 @@
    <circle class="circle-inner" cx="50" cy="50" r="23" stroke-width="15"/>
  </pattern>
 
+ 
 </defs>
 
 </svg>
