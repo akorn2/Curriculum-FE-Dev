@@ -1,0 +1,59 @@
+//- extends ../../views/single_layout
+//- //- script(async='' src='//assets.codepen.io/assets/embed/ei.js')
+//- block content
+//-   h3 Portuguese Tiles
+//-   
+//-     :marked
+//-     
+//-         ## Current State
+//-         Unable to convert file type.
+//-         
+//-         ## Desired Outcome
+//-         Tried installing a SCSS compiling command line function to run on each save. 
+//- 
+//-         ## Visioned Solution
+//-         This framework Roots comes with (compiler functionality)[http://roots.cx/docs/compilers] = (accord)[https://github.com/jescalan/accord].
+//-         Speceficially I need to integreate the (scss.render method)[https://github.com/jescalan/accord/blob/master/docs/scss.md]:
+//-         
+//-         ## Failed Code
+//-         ```app.coffee
+//-             sass  = require 'node-sass'
+//-             
+//-             module.exports =
+//-                 extensions: [
+//-                   dynamic_content(),
+//-                   browserify(files: 'assets/js/main.coffee', out: 'js/build.js'),
+//-                   sass(files: 'assets/scss/overlays.scss', out: 'css/compiled.css'),
+//-                   yaml()
+//-                 ]
+//-         ```
+//-         or need to execute the method
+//-         ```
+//-         jade.renderFile('./example.jade')
+//-         .done(console.log.bind(console))
+//-         ```
+//-         
+//-         ## Follow Up Review
+//-         
+//-         
+//-         ## Gulp vs. NPM Scripts
+//-         NPM scripts are quick to implement for smaller projects
+//-         Gulp organizes larger projects and (Gulp is faster)[https://s3.amazonaws.com/f.cl.ly/items/3S0n1W1N190Y392j1T0w/npm-scripts-vs-gulp.mp4] 
+//-         
+//-         ## Alternative (not yet)
+//-         (Gulp Getting Started)[https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md]
+//-         (Gulp script - Rebuild that what was only built)[https://github.com/gulpjs/gulp/blob/master/docs/recipes/rebuild-only-files-that-change.md]
+//-         (Advanced one)[https://github.com/gulpjs/gulp/blob/master/docs/recipes/only-pass-through-changed-files.md]
+//-         ```
+//-         var gulp = require('gulp');
+//-         var sass = require('gulp-sass');
+//-         var watch = require('gulp-watch');
+//- 
+//-         gulp.task('default', function() {
+//-           return gulp.src('sass/*.scss')
+//-             .pipe(watch('sass/*.scss'))
+//-             .pipe(sass())
+//-             .pipe(gulp.dest('dist'));
+//-         });
+//-         ```
+//-         

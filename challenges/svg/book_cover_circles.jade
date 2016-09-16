@@ -3,7 +3,8 @@ extends ../../views/single_layout
 block content
   h3 Book Cover - Circles
 
-  
+  <style>
+  </style>
   :marked
     ## Project is a success. 
     Inspired by an archetecture book in Berlin. The book was a collection of epic hostel designs.
@@ -36,7 +37,7 @@ block content
   //-   </pattern>
   //-   ```
 
-  img(src='/img/poster/refrences/berline_book_architecture_circles.jpg', style="width:90%")
+  img.card(src='/img/poster/refrences/berline_book_architecture_circles.jpg', style="width:90%")
   :marked
     ### Refrence Design
     Found in Berlin! Fun!
@@ -74,3 +75,12 @@ block content
     ## Interactive SVG Embeding Browser Safe
     (tutorial)[http://stackoverflow.com/questions/4476526/do-i-use-img-object-or-embed-for-svg-files]
     (animation explaining)[http://www.schepers.cc/svg/blendups/embedding.html]
+    
+    ## Text Baselines
+    Allign text 'cross-browser safely'
+    (tutorial)[http://vanseodesign.com/web-design/svg-text-baseline-alignment/
+    
+    ## Image (0,0) coordinates in middle of object, for rotations and scaling
+    (tutorial)[https://css-tricks.com/transforms-on-svg-elements/]
+    
+    

@@ -19,6 +19,7 @@
     "lodash.find": "3.x",
     "marked": "0.3.x",
     "moment": "2.x",
+    "node-sass": "^3.10.0",
     "parallax.js": "jenius/parallax",
     "roots": "3.1.x",
     "roots-browserify": "0.5.x",

@@ -1,0 +1,56 @@
+.card {
+  position: relative;
+  /*width: 60vw;
+  height: 40vh;
+  margin: 5vh;*/
+  overflow: hidden;
+  /*background-image: url("https://hd.unsplash.com/photo-1444412667101-4eccfdeeff07");
+  background-position: center center;
+  background-size: cover;*/
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+.card:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(30, 30, 200, 0.3);
+  background-image: -webkit-linear-gradient(270deg, transparent, rgba(30, 30, 200, 0.8));
+  background-image: linear-gradient(180deg, transparent, rgba(30, 30, 200, 0.8));
+  -webkit-transition: left 0.5s ease-in-out;
+  transition: left 0.5s ease-in-out;
+}
+.card:hover:before {
+  left: 80%;
+}
+.card.screen:before {
+  mix-blend-mode: screen;
+}
+.card.multiply:before {
+  mix-blend-mode: multiply;
+}
+/*
+body {
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #222;
+}*/

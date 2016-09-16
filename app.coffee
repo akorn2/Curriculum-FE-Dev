@@ -5,18 +5,20 @@ jeet            = require 'jeet'
 browserify      = require 'roots-browserify'
 dynamic_content = require 'dynamic-content'
 yaml            = require 'roots-yaml'
+# sass            = require 'node-sass'
 
 module.exports =
   ignores: ['readme.md', '**/*layout.*', '**/_*', '.gitignore']
 
   locals:
-    title: 'Roots: Enlightened Static Sites'
-    author: 'Jeff Escalante'
-    description: 'Roots: a modern, powerful, and open source static site generator'
+    title: 'Curious Aaron: FE Discoveries'
+    author: 'Aaron Schleichkorn'
+    description: 'Collection of Goodies'
 
   extensions: [
     dynamic_content(),
     browserify(files: 'assets/js/main.coffee', out: 'js/build.js'),
+    # sass(files: 'assets/scss/overlays.scss', out: 'css/compiled.css'),
     yaml()
   ]
 
