@@ -1,30 +1,32 @@
 .card {
   position: relative;
-  /*width: 60vw;
-  height: 40vh;
-  margin: 5vh;*/
+  /*width: 100vw;
+  height: 100vh;*/
+  /*margin: 5vh;*/
   overflow: hidden;
-  /*background-image: url("https://hd.unsplash.com/photo-1444412667101-4eccfdeeff07");
+  /*background-image: url("https://hd.unsplash.com/photo-1444412667101-4eccfdeeff07");*/
   background-position: center center;
-  background-size: cover;*/
+  background-size: cover;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+  z-index: 99999;
 }
 .card:before {
   content: "";
   display: block;
   position: absolute;
   top: 0;
-  right: 0;
+  right: 100%;
   bottom: 0;
   left: 0;
   background-color: rgba(30, 30, 200, 0.3);
   background-image: -webkit-linear-gradient(270deg, transparent, rgba(30, 30, 200, 0.8));
   background-image: linear-gradient(180deg, transparent, rgba(30, 30, 200, 0.8));
   -webkit-transition: left 0.5s ease-in-out;
-  transition: left 0.5s ease-in-out;
+  transition: right 0.5s ease-in-out;
+  z-index: 99999;
 }
 .card:hover:before {
-  left: 80%;
+  right: 0;
 }
 .card.screen:before {
   mix-blend-mode: screen;

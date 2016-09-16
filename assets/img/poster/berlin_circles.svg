@@ -5,29 +5,51 @@
   .circle-outer { fill:#a76c3d; }
   .background, .circle-inner, .rectangle { fill:#cabaac;}
   .background-right { fill: #8e404c; }
+  <!-- .background-right { fill: url(); } -->
   <!-- red=e2001a -->
 </style>
 
 <rect class="background" width="565" height="625"/>
-<rect style="fill: url(#circles-pattern);" x="0" y="0" width="565" height="625"/>
-<rect style="fill: url(#horizontal-pattern)" x="0" y="-4" width="585" height="630"/>
-<rect style="fill: url(#vertical-pattern)" x="-13" y="0" width="585" height="625"/>
+<rect style="fill: url(#circles-pattern);" x="0" y="0" width="565" height="625">
+  <!-- <animateTransform attributeName="transform" attributeType="XML"
+     type="scale" from="1" to="2" additive="sum"
+     begin="3s" dur="6s" fill="freeze" /> -->
+</rect>
+
+<rect style="fill: url(#horizontal-pattern)" x="-11" y="-11" width="600" height="650">
+</rect>
+
+<rect style="fill: url(#vertical-pattern)" x="-11" y="-11" width="600" height="650">
+</rect>
+
+<!-- <rect style="fill: url(#vertical-pattern)" x="-13" y="0" width="585" height="625"/>
+<rect style="fill: url(#horizontal-pattern)" x="0" y="-4" width="585" height="630"/> -->
+
 
 <rect class="background-right" x="565" width="350" height="625"/>
 
-<text class="title" x="740" y="75%" alignment-baseline="middle" text-anchor="middle" style="font-family: Georgia, Times, serif; font-size: 32; fill: #fff;">
-  Berlin</text>
+<image class="" x="565" width="350" height="710" xlink:href="../pattern/TEXTURE-RED---Kerry_James_Marshall_Portrait_of_the_Artist_a_Vacuum.jpg">
+</image>
+
+<!-- <text class="title" x="740" y="75%" alignment-baseline="middle" text-anchor="middle" style="font-family: Georgia, Times, serif; font-size: 32; fill: #fff;">
+  Berlin</text> -->
 
 <use xlink:href="#berlin_bear" x="0" y="70" transform='translate(660 0) scale(.8)'/>
-<!-- alignment-baseline="middle" anchor="middle" -->
+
 <defs>
 
- <pattern id="horizontal-pattern" x="0" y="0" width="100" height="10" patternUnits="userSpaceOnUse" >
-   <rect class="rectangle" x="0" y="0" width="100" height="5"/>
- </pattern>
+<pattern id="horizontal-pattern" x="0" y="0" width="100" height="20" patternUnits="userSpaceOnUse" >
+   <rect class="rectangle" x="0" y="0" width="100" height="5">
+     <animate attributeName="y" attributeType="XML"
+           begin="0s" dur="8s" fill="freeze" from="0" to="10" repeatCount="indefinite"/>
+  </rect>
+</pattern>
 
- <pattern id="vertical-pattern" x="0" y="0" width="10" height="100" patternUnits="userSpaceOnUse" >
-   <rect class="rectangle" x="0" y="0" width="5" height="100"/>
+ <pattern id="vertical-pattern" x="0" y="0" width="20" height="100" patternUnits="userSpaceOnUse" >
+   <rect class="rectangle" x="0" y="0" width="5" height="100">
+     <animate attributeName="x" attributeType="XML"
+           begin="0s" dur="8s" fill="freeze" from="0" to="10" repeatCount="indefinite"/>
+   </rect>
  </pattern>
 
  <pattern id="circles-pattern" x="-50" y="-10" width="100" height="100" patternUnits="userSpaceOnUse" >
