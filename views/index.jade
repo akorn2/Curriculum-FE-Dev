@@ -2,133 +2,114 @@ extends layout
 
 block content
 
-  #header
-    h1 CODE WITH ME!
-    h2 I'm a website storyteller
+    #header
+        h1 Dev Curriculum
+        h3 from Designer to Developer
+        h2 Mentor? lets talk!
+        h2 Learning? lets pair-code!
 
-    img.light-rays(src='/img/index/light-rays.svg')
+        img.light-rays(src='/img/index/light-rays.svg')
 
-    .clouds
-      img.c1(src='/img/index/c2.svg')
-      img.c2(src='/img/index/c1.svg')
-      img.c3(src='/img/index/c2.svg')
+        .clouds
+            img.c1(src='/img/index/c2.svg')
+            img.c2(src='/img/index/c1.svg')
+            img.c3(src='/img/index/c2.svg')
 
-    .trees
-      .anchor.layer
-      img.t1.layer(src='/img/index/t1.svg', data-depth='0.20')
-      img.t2.layer(src='/img/index/t2.svg', data-depth='0.60')
-      img.t3.layer(src='/img/index/t3.svg', data-depth='0.40')
-      img.t4.layer(src='/img/index/t4.svg', data-depth='0.20')
-      img.t5.layer(src='/img/index/t5.svg', data-depth='0.00')
+        .trees
+            .anchor.layer
+            img.t1.layer(src='/img/index/t1.svg', data-depth='0.20')
+            img.t2.layer(src='/img/index/t2.svg', data-depth='0.60')
+            img.t3.layer(src='/img/index/t3.svg', data-depth='0.40')
+            img.t4.layer(src='/img/index/t4.svg', data-depth='0.20')
+            img.t5.layer(src='/img/index/t5.svg', data-depth='0.00')
+    #intro
+        .text
+            :marked
+                ## I'm Aaron,
+                #### I've been traveling the globe digitalizing designs found in: Porto Portugal, Lisboa, Madeira, Cluj Romania, Berlin, Amsterdam, Munich, Paris, Barcelona,
+                
+                
+                #### I created this website to express my experiences from traveling.
+                ### My work focuses upon explaining how the creation happened. As my work is derivitive from other's styles, I aim to empower the sampeling of design.
+        .video
+            .stage
+                h2 I'm Aaron
+                iframe(src="https://youtube.com/embed/2_KwRoWA8Z4?hd=1&rel=0&autohide=1&showinfo=0", frameborder="0", allowfullscreen="true")
 
-  #intro
-    .text
-        :marked
-            # mobile phone Storytelling
-            #### Tell the story! Printmaking to bikes to social-media-content, 
-            
-            ## I'm Aaron,
-            #### I've been traveling the globe digitalizing designs found in: Porto Portugal, Lisboa, Madeira, Cluj Romania, Berlin, Amsterdam, Munich, Paris, Barcelona,
-            
-            #### I created this website to express my experiences from traveling.
-            #### My work focuses upon explaining how the creation happened. As my work is derivitive from other's styles, I aim to empower the sampeling of design.
-            
-            ## I'm a programmmer and designer.
-            #### With code I re-use designs to be relevent and impactful.
-            ## This is my Independent Study
-            #### Honestly, I'm more of an Artist than programmer. Creating pictures is my passion and web browsers is my generation's medium. With my background as a Printmaker, I understand the importance of a Mastery in technical processes. To Master the web browser, I created this curriculum. View Studies, view client Projects here, view my LinkedIn here, collaborate with me!
-            
-            As a creator I learn a lot from dissecting quality products. Repetition with slight variance is key to mastery. I hope you learn from my studies too. I've also attached a grading criteria with each case study!
-            
-    .video
-      .stage
-        h2 Introduction to Mastering FE
-        iframe(src="https://youtube.com/embed/2_KwRoWA8Z4?hd=1&rel=0&autohide=1&showinfo=0", frameborder="0", allowfullscreen="true")
+        .trees
+            .anchor.layer
+            img.t1.layer(src='/img/index/t6.svg', data-depth='0.60')
+            img.t2.layer(src='/img/index/t7.svg', data-depth='0.40')
+            img.t3.layer(src='/img/index/t8.svg', data-depth='0.20')
+            img.t4.layer(src='/img/index/t9.svg', data-depth='0.00')
 
-    .trees
-      .anchor.layer
-      img.t1.layer(src='/img/index/t6.svg', data-depth='0.60')
-      img.t2.layer(src='/img/index/t7.svg', data-depth='0.40')
-      img.t3.layer(src='/img/index/t8.svg', data-depth='0.20')
-      img.t4.layer(src='/img/index/t9.svg', data-depth='0.00')
+    #resources
 
-  #resources
+        .more-videos
+            h3 CODE WITH ME!
+            p If you know ES2016, I'd be happy to tackle a code challenge with you. View completed and open challenges:
 
-    .more-videos
-      h3 CODE WITH ME!
+            h3 Project Highlights
+            ul.others
+                li.active(data-id='2_KwRoWA8Z4')
+                  img(src='/img/video_thumbs/s1.jpg')
+                  span Potential mentor? Please listen!
+                li(data-id='fQq6kWhOSxk')
+                  img(src='/img/video_thumbs/s2.jpg')
+                  span Typography Studies Inspired by Magazines
+                li(data-id='OJYO0ZzmFxM')
+                  img(src='/img/video_thumbs/s3.jpg')
+                  span Tesselating Patterns
+                li(data-id='cGzkohoTUHc')
+                  img(src='/img/video_thumbs/s4.jpg')
+                  span Project 4
+                li(data-id='rOIJ27MFlsY')
+                  img(src='/img/video_thumbs/s5.jpg')
+                  span Project 5
+              
+        object.example(type="image/svg+xml", data='/img/index/tiles2.svg')
 
-      ul.others
-        li.active(data-id='2_KwRoWA8Z4')
-          img(src='/img/video_thumbs/s1.jpg')
-          span Tesselating Patterns for cultural context
-        li(data-id='fQq6kWhOSxk')
-          img(src='/img/video_thumbs/s2.jpg')
-          span Typography Studies Inspired by Magazines
-        li(data-id='OJYO0ZzmFxM')
-          img(src='/img/video_thumbs/s3.jpg')
-          span Project 3
-        li(data-id='cGzkohoTUHc')
-          img(src='/img/video_thumbs/s4.jpg')
-          span Project 4
-        li(data-id='rOIJ27MFlsY')
-          img(src='/img/video_thumbs/s5.jpg')
-          span Project 5
-          
-    object.example(type="image/svg+xml", data='/img/index/tiles2.svg')
-
-    ul.links
-        li
-          a(href='/svg')
-            .icon
-                img(src='/img/index/docs-icon.svg')
-            .text
-                h3 SVG Typoraphy and Rich Design
-                p 
-        li
-            a(href='/react')
-              .icon
-                  img(src='/img/index/docs-icon.svg')
-              .text
-                  h3 React.JS
-                  p Actively learning react as a method to organize code.
-        li
-        a(href='/')
-          .icon
-            img(src='/img/index/docs-icon.svg')
-          .text
-            h3 Coding UIs with tests
-            p Boom
-        li
-        a(href='/')
-          .icon
-            img(src='/img/index/extensions-icon.svg')
-          .text
-            h3 Cross-Device studies
-            p Lets code together
-        li
-        a(href='/')
-          .icon
-            img(src='/img/index/docs-icon.svg')
-          .text
-            h3 Conditioned Behavior
-            p Boom
-        li
-        a(href='/')
-          .icon
-            img(src='/img/index/extensions-icon.svg')
-          .text
-            h3 Analitic Narratives
-            p Using the scientific method to desern which colors, messages and orientation is most effient.
+        ul.links
+            li: a(href='/svg')
+                .icon: img(src='/img/index/docs-icon.svg')
+                .text
+                    h3 SVG Typoraphy and Rich Design
+                    p 
+            li: a(href='/react')
+                  .icon: img(src='/img/index/docs-icon.svg')
+                  .text
+                      h3 React.JS
+                      p Actively learning react as a method to organize code.
+            li: a(href='/')
+                .icon: img(src='/img/index/docs-icon.svg')
+                .text
+                    h3 Coding UIs with tests
+                    p Boom
+            li: a(href='/fe')
+                .icon: img(src='/img/index/extensions-icon.svg')
+                .text
+                    h3 Cross-Device studies
+                    p Lets code together
+            li: a(href='/')
+                .icon: img(src='/img/index/docs-icon.svg')
+                .text
+                    h3 Conditioned Behavior
+                    p Boom
+            li: a(href='/')
+                .icon: img(src='/img/index/extensions-icon.svg')
+                .text
+                    h3 Analitic Narratives
+                    p Using the scientific method to desern which colors, messages and orientation is most effient.
 
         
-    .trees
-      .anchor.layer
-      img.t1.layer(src='/img/index/t10.svg', data-depth='0.40')
-      img.t2.layer(src='/img/index/t11.svg', data-depth='0.20')
-      img.t3.layer(src='/img/index/t12.svg', data-depth='0.00')
+        .trees
+            .anchor.layer
+            img.t1.layer(src='/img/index/t10.svg', data-depth='0.40')
+            img.t2.layer(src='/img/index/t11.svg', data-depth='0.20')
+            img.t3.layer(src='/img/index/t12.svg', data-depth='0.00')
 
-  #footer
-    :marked
-        ### Pair Code With Me
-        (github/curiousAaron)[www.github.com/curiousAaron]
-    a(href='https://carrot.is'): img.built-at-carrot(src='/img/index/built-at-carrot.svg')
+    #footer
+        :marked
+            ### Pair Code With Me
+            (github/curiousAaron)[www.github.com/curiousAaron]
+        a(href='https://carrot.is'): img.built-at-carrot(src='/img/index/built-at-carrot.svg')
