@@ -5,6 +5,7 @@ block content
 
   <style>
   </style>
+    
   :marked
     ## Project is a success. 
     Inspired by an archetecture book in Berlin. The book was a collection of epic hostel designs.
@@ -45,7 +46,30 @@ block content
     Found in Berlin! Fun!
     
     ## Learning Tidbits
-  //- h4(name="centering-text-svg") Centering Text
+    
+    #### JS to manipulate SVG elements
+    SVGs are rendered into the DOM and accesable like any other dom element.
+    
+    We can manipulate svg text:
+    
+    ```html
+    <a on="onclick()">
+    ```
+    ```javascript
+    function changeText() {
+    document.getElementById('landingTitle').textContent= "Clicked";}
+    ```
+    
+    We can manipulate svg element's style:
+    ```html
+    <a onmouseover="changeColor('purple')">
+    ```
+    
+    ```javascript
+    function changeColor(color) {
+    document.getElementById('landingTitle').style.fill= color;}
+    ```
+    
     #### Centering Text inside SVGs
     
     1. Set the position of the text to the absolute center of the element in which you want to center it:

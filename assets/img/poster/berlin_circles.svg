@@ -1,4 +1,4 @@
-<!-- <?xml version="1.0" encoding="UTF-8" standalone="no"?> -->
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- <?xml-stylesheet type="text/css" href="../../css/svg.css" ?> -->
 <svg version="1.1" class="" viewBox="0 0 915 625" x="0px" y="0px" width="915px" height="625px" style="enable-background:new 0 0 915 625;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <style>
@@ -8,7 +8,14 @@
   <!-- .background-right { fill: url(); } -->
   <!-- red=e2001a -->
 </style>
+<script>
+  console.log("hey inside svg");
 
+  function changeColor(color) {
+  document.getElementById('landingTitle').style.fill= color;}
+  function changeText() {
+  document.getElementById('landingTitle').textContent= "Clicked";}
+</script>
 <rect class="background" width="565" height="625"/>
 <rect style="fill: url(#circles-pattern);" x="0" y="0" width="565" height="625">
   <!-- <animateTransform attributeName="transform" attributeType="XML"
@@ -22,33 +29,29 @@
 <rect style="fill: url(#vertical-pattern)" x="-11" y="-11" width="600" height="650">
 </rect>
 
-<!-- <rect style="fill: url(#vertical-pattern)" x="-13" y="0" width="585" height="625"/>
-<rect style="fill: url(#horizontal-pattern)" x="0" y="-4" width="585" height="630"/> -->
-
-
 <rect class="background-right" x="565" width="350" height="625"/>
 
-<image class="" x="565" width="350" height="710" xlink:href="../pattern/TEXTURE-RED---Kerry_James_Marshall_Portrait_of_the_Artist_a_Vacuum.jpg">
+<image id="bg-pattern" class=""  x="565" width="350" height="710" xlink:href="../pattern/TEXTURE-RED---Kerry_James_Marshall_Portrait_of_the_Artist_a_Vacuum.jpg">
 </image>
 
-<!-- <text class="title" x="740" y="75%" alignment-baseline="middle" text-anchor="middle" style="font-family: Georgia, Times, serif; font-size: 32; fill: #fff;">
-  Berlin</text> -->
+<text id="landingTitle" onmouseover="changeColor('black')" onmouseout="changeColor('white')" class="title" x="740" y="75%" alignment-baseline="middle" text-anchor="middle" style="font-family: Georgia, Times, serif; font-size: 32; fill: #fff;">
+  Berlin</text>
 
-<use xlink:href="#berlin_bear" x="0" y="70" transform='translate(660 0) scale(.8)'/>
+<use xlink:href="#berlin_bear" onclick="changeText()" x="0" y="70" transform='translate(660 0) scale(.8)'/>
 
 <defs>
 
 <pattern id="horizontal-pattern" x="0" y="0" width="100" height="20" patternUnits="userSpaceOnUse" >
    <rect class="rectangle" x="0" y="0" width="100" height="5">
-     <animate attributeName="y" attributeType="XML"
-           begin="0s" dur="8s" fill="freeze" from="0" to="10" repeatCount="indefinite"/>
+     <!-- <animate attributeName="y" attributeType="XML"
+           begin="0s" dur="8s" fill="freeze" from="0" to="10" repeatCount="indefinite"/> -->
   </rect>
 </pattern>
 
  <pattern id="vertical-pattern" x="0" y="0" width="20" height="100" patternUnits="userSpaceOnUse" >
    <rect class="rectangle" x="0" y="0" width="5" height="100">
-     <animate attributeName="x" attributeType="XML"
-           begin="0s" dur="8s" fill="freeze" from="0" to="10" repeatCount="indefinite"/>
+     <!-- <animate attributeName="x" attributeType="XML"
+           begin="0s" dur="8s" fill="freeze" from="0" to="10" repeatCount="indefinite"/> -->
    </rect>
  </pattern>
 
