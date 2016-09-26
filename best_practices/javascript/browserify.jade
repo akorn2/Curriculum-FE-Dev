@@ -5,4 +5,9 @@ block content
   :marked
     (Browserify Handbook)[https://github.com/substack/browserify-handbook]
     
-    
+    Question: Is ```./path``` the same as ```path```?
+    Answer: 
+    The distinction is irelevent in HTML/HTTP - they mean the same thing.
+    The variance is vital in shell because the shell looks up executable commands in a mix of its iternal commands, PATH directories and the current working directory. By using ./command, you unambiguously tell it to use command in the current directory, not elsewhere.
+    @clarity: Can these two mean differnt locations in shell? 
+    @Answer: Shell's root is refrenced to generate 'this folder' compared to html executes the script from the current directory.
