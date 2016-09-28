@@ -5,9 +5,125 @@ block content
   :marked
     (Browserify Handbook)[https://github.com/substack/browserify-handbook]
     
-    Question: Is ```./path``` the same as ```path```?
-    Answer: 
-    The distinction is irelevent in HTML/HTTP - they mean the same thing.
-    The variance is vital in shell because the shell looks up executable commands in a mix of its iternal commands, PATH directories and the current working directory. By using ./command, you unambiguously tell it to use command in the current directory, not elsewhere.
-    @clarity: Can these two mean differnt locations in shell? 
-    @Answer: Shell's root is refrenced to generate 'this folder' compared to html executes the script from the current directory.
+    ### Require()
+    @Question: Is ```./path``` the same as ```path```? for npm modules, shell script, html/http?
+    @answer: node_models
+    @answer: shell
+    @answer: in HTML/HTTP the distinction is irelevent - they mean the same thing.
+    
+    @refrence: node_modules refrence relative files with ```./file```. Relative to ```require()``` call location. ```file``` is not relative, and will start searching for file in project root, then working up the file tree. 
+    
+    results read if ```require('xyz')``` from ```/beep/boop/foo.js```:
+    ```
+    /beep/boop/node_modules/xyz
+    /beep/node_modules/xyz
+    /node_modules/xyz
+    ```
+    @question: why does subfolder refrence 'node_modules' come from?
+    @answer: ?
+    
+    @question: ???
+    @refrence:
+    ```
+    For each xyz directory that exists, node will first look for a xyz/package.json to see if a "main" field exists. The "main" field defines which file should take charge if you require() the directory path.
+    For example, if /beep/node_modules/xyz is the first match and /beep/node_modules/xyz/package.json has:
+    {
+      "name": "xyz",
+      "version": "1.2.3",
+      "main": "lib/abc.js"
+    }
+    then the exports from /beep/node_modules/xyz/lib/abc.js will be returned by require('xyz').
+    If there is no package.json or no "main" field, index.js is assumed:
+    /beep/node_modules/xyz/index.js
+    ```
+
+    
+    @refrence:  Paths that start with a ./ or ../ are always local to the file that calls require().
+    @refrence: The variance is vital in shell because the shell looks up executable commands in a mix of its iternal commands, PATH directories and the current working directory. By using ./command, you unambiguously tell it to use command in the current directory, not elsewhere.
+    @Question: Can these two mean differnt locations in shell? 
+    @answer: ?
+    @refrence: Shell's root is refrenced to generate 'this folder' compared to html executes the script from the current directory.
+
+    Key Notes
+    
+    * Refrenced npm file relative to the invoking file calling ```require```
+    * ```require``` returns a function available inside this scope 
+    @question: what defines the scope parameters?
+    @answer: 
+    
+    
+    ### Export()
+    * Can export functions, numbers, keys, arrays, objects,
+    * Relative paths are always resolved with respect to the invoking file's location.
+    
+    @question: How would you access this number? ```require(???)```
+    @answer: this works if file features only one export.
+    @question: What if multiple export are in the file?
+    ```
+    model.export = 555
+    ```
+    
+    ```
+    //works
+    var numbers = [];
+    for (var i = 0; i < 100; i++) numbers.push(i);
+
+    module.exports = numbers;
+    ```
+    @refrence: multple exports are okay with sub-keys
+    @refrence: ```model.exports``` is the same as ```exports```
+    ```
+    //works
+    exports.beep = function (n) { return n * 1000 }
+    exports.boop = 555
+    ```
+    ```
+    //works
+    module.exports.beep = function (n) { return n * 1000 }
+    module.exports.boop = 555
+    ```
+    
+    
+    @question: what! why does module.exports work? How do you access it?
+    @answer: ??? 
+    @refrence: module.exports works if only one key is stored in the page. 
+    ```
+    // Does not work
+    exports = function (n) { return n * 1000 }
+    ```
+    ```
+    // works
+    module.exports = function (n) { return n * 1000 }
+    ```
+    
+    
+    @refrence: best practice is to export one function and remove .foo from ```exports.foo```
+    ```
+    exports.foo = function (n) { return n * 111 }
+    ```
+    ```
+    var foo = require('./foo.js');
+    console.log(foo.foo(5));
+    ```
+    
+    ## Watchify
+    ```
+    {
+      "build": "browserify browser.js -o static/bundle.js",
+      "watch": "watchify browser.js -o static/bundle.js --debug --verbose",
+    }
+    ```
+    
+    
+    
+    
+    
+    (documentation)[http://browserify.org/]
+    @next: Use --debug when creating bundles to have Browserify automatically include Source Maps for easy debugging.
+    @next: Check out tools like Beefy or run-browser which make automating browserify development easier.
+    @next: process.nextTick(), __dirname, and __filename node-isms work
+    @next: Get browser versions of the node core libraries events, stream, path, url, assert, buffer, util, querystring, http, vm, and crypto when you require() them
+    
+
+    
+    

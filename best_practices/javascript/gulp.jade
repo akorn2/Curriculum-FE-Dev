@@ -1,0 +1,25 @@
+extends ../../views/single_layout
+
+block content
+  h3 Gulp
+  :marked
+    
+    
+    ### 
+    
+    ```
+    var gulp       = require('gulp');
+    var imagemin   = require('gulp-imagemin');
+     
+    gulp.task('images', function(){
+        return gulp.src('./src/images/**')
+            .pipe(imagemin())
+            .pipe(gulp.dest('./build/images'));
+    });
+    ```
+    First, gulp.src sucks in a stream of files and gets them ready to be piped through whatever tasks you've made available. In this instance, I'm running all the files through gulp-imagemin, then outputting them to my build folder using gulp.dest. To add additional processing (renaming, resizing, liveReloading, etc.), just tack on more pipes with tasks to run.
+    (this tutorial is very clear)[https://www.viget.com/articles/gulp-browserify-starter-faq]
+    
+    @next: Finish above tutorial
+    @next: Integrate tests (from this tutorial)[https://ci.testling.com/]
+    
