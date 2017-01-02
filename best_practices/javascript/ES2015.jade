@@ -3,6 +3,7 @@ extends ../../views/single_layout
 block content
   h3 ES2015
   :marked
+    
     ## Arrow Function =>
     'Lexical binding' which means, they bind to the scope where they are defined, not where they are run. 
     
@@ -35,4 +36,174 @@ block content
     Question: What methods of the 'Map' object do we use?
     Answer: Get, Set, Has, Delete
     
-  
+    Question: what does the spread operator accomplish?
+    Answer: spread operator allows us to split an array of arguements into individual elements
+    ```
+    getRequest("/topics/17/tags", function(data){ 
+        let tags = data.tags; 
+        displayTags(...tags); 
+    })
+    ```
+    Question: rest parameters function 
+    Answer: ? Used to pass an array of objects, one by one as individual elements
+    ``` 
+    displaytags(...tags){ 
+        for(let i in tags){ 
+            let tags = tags[i]; 
+            _addToTopic(target, tag); 
+            } 
+        }
+    ```
+    
+    Question: What is the differnce between Rest parameters and spread operator? 
+    Answer: rest parameters and the spread operator look the same, but the former is used in function definitions and the later is function invocations. 
+    Example: 
+    Status: open
+    Subject: ES2015
+    
+    Question: When are arrow functions applicable?
+    Answer: Anonymous functions pased as callbacks to other functions createe their own scope. To share the scope, the arrow function binds the scope of where they are difined, not where they are used.
+    Example: 
+    
+    Question: When are annomynous functions applicable?
+    Answer: 1) arguments being passed to higher-order functions, or 2) used for constructing the result of a higher-order function that needs to return a function.
+    
+    Question: Why is one better than the other:
+    Answer:
+    Example: 
+    ```Object.assign(defaults, options);``` 
+    ``` let settings = Object.assign({}, defaults, options);``` 
+    ``` let settings = {}; Object.assign(settings, defaults, options);```
+        
+    Question: which structure is better (for array or object) and why? 
+    Answer: 
+    Example:
+    ``` for(let index in names){ console.log( names[index] );```
+    ```for(let name of names){ console.log( name ); }```
+    Hint: ```console.log( typeof names[Symbol.iterator] ); ```
+    
+    Question: What types of data have build in iterator features? 
+    Answer: 
+    ```
+    Array.prototype[@@iterator]()
+    TypedArray.prototype[@@iterator]()
+    String.prototype[@@iterator]()
+    Map.prototype[@@iterator]()
+    Set.prototype[@@iterator]()
+    ```
+    
+    Question: What does this code do? Simplify the code.
+    Answer:
+    ```let admin = user.find( user => return user.admin );
+    Example:
+    ```let admin = users.find ( (user) => { return user.admin; });```
+    
+    
+    Question: deconstruct this array ```["programming", "web", "JS"]```
+    Answer: ```let [a,b,c] = ["programming", "web", "JS"];```
+    
+    Question: What is happennig here:
+    Answer:
+    Example: let [first, second, ...remaining] = ['user1', 'user2', 'user3', 'user4'];
+    
+    Question: When are data keys, not converted to strings?
+    Answer: ?
+    Example: I ask this because: when using Objects as maps, its keys are always converted to strings.
+    
+    Question: What do these read and why?
+    Answer: The last value overrides the previous. This is because, behind the scenes: The key is converted to a string, meaning ```[user]``` is not recessed inside of totalReplies, but...
+    ```42 42 ["[object Object]"]```
+    Example: 
+    ```
+    let totalReplies = { }; 
+    totalReplies[user1] =5; 
+    totalReplies[user2] = 42; 
+    console.log( totalReplues[user1] ); 
+    console.log( totalReplies[user2] ); 
+    console.log( Object.keys(totalReplies) );
+    ```
+    
+    Question: What is Object.keys( ); method used for?
+    Answer:
+    
+    Question: What does Object.map( ); accomplish? What are the methods?
+    Answer: The Map object is a simple key/value data structure. Any value may be used as either a key or a value, and objects are not converted to strings.
+    use Map, when keys are unknown until runtime
+    .set(key, value);
+    .get(key);
+    
+    Question: When to not use Map object?
+    Answer: When keys or values are of differnt types. For example an js object the constant variable composed of boolean and integer
+    
+    Question:
+    What will this code output? Why:
+    Answer:
+    Example:
+    ```
+    let author1 = { name: "Sam" };
+    let author2 = { name: "Tyler" };
+
+    let mostRecentReply = {};
+
+    mostRecentReply[author1] = "ES2015";
+    mostRecentReply[author2] = "Semi-colons: Good or Bad?";
+    ```
+    
+    Question: What does object.Map.set() accomplish?
+    Answer:
+    
+    Question: What methods are available to Object.set?
+    
+    Question: How is a Object.weakSet() differnt for Object.set?
+    Answer: 1) Only objects can be stored (no strings). 2) Cannot use 'for of'. Does not have methods to read from it. 3) object.weakSet offers methods ```.add .has .delete```
+    
+    Question: when do we use Object.weakSet()?
+    Answer: Dont add mutable attributes to objects. instead create a weakSet list of data objects to record interaction behavior.
+    Eaxample:
+    ```
+    let readPosts = new WeakSet(); 
+    //...when post is clicked on  
+    postList.addEventListener('click', (event) { 
+        readPosts.add(post);  
+    });  
+    // ...rendering posts 
+    for(let post of postArray){ 
+        if(!readPosts.has(post)){ 
+            _addNewPostClass(post.elemnt);
+        } 
+    }
+    ```
+    
+    Question: What is a limitation of Arrays?
+    Answer: object uniqueness is not enforced. Duplicate entries are allowed.
+    
+    
+    Question: Exaplain
+    Answer:
+    Example:
+    ```
+    class Advertisement {
+
+      constructor(title, link){
+        this.title = title;
+        this.link = link;
+      }
+
+      _buildContent(){
+        return `<h1>${this.title}</h1>
+          <a href="${this.link}">${this._linkText()}</a>`;
+      }
+      
+      _linkText(){
+        return "Click Here";
+      }
+      
+      render(){
+        return this._buildContent();
+      }
+    }
+
+    export { Advertisement };
+    ```
+    
+    

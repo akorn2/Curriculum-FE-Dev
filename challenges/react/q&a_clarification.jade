@@ -1,0 +1,43 @@
+extends ../../views/single_layout
+
+block content
+  h3 Refrences
+  
+    :marked
+    
+        //Asumption Object
+        //responsible for recording, asked to others, ask to self, 
+        ```
+        assumptionObject {
+            id : 1
+            date : 
+            user {
+                role: creator, editor, answered, commentor
+                
+            }
+            question : 
+            codeExample :
+            answer :
+        }
+        ```
+
+
+
+        question : component can call functions accesing properties and states of their children.
+        answer :
+        
+        question: Why check the same value twice?
+        codeExample: ```if(post.author.photo && post.author.photo != '') {...}````
+        
+        
+        question : why and when must we use .bind(this)?
+        codeExample : 
+        ```
+                  <button onClick={this.handleClick.bind(this)}>
+                    {this.props.children}
+                  </button>
+        ```
+        answer:
+        
+        question: why and when must we use ```event.preventDefault();```
+        

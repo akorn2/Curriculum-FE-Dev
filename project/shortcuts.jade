@@ -1,0 +1,43 @@
+extends ../views/single_layout
+
+block content
+  h3 Shortcut Clippy
+  :marked
+    For new mac users
+    For atom users
+    
+    desktop clippy app that recognizes keypatterns and suggests shortcuts. 
+    desktop clippy app that prompts "you're using chrome [and are idle], did you know, you can.... remind me of this shortcut or have memorized, or next shortcut suggestion" 
+    
+    Decisions:
+    load shortcuts from where?
+    when to prompt?
+    
+    ## User Flow:
+    ### Download & Install
+    ### Select shortcut groups of interest
+    ```
+    keys{
+        key: 
+        open: t/f
+        subject: []
+        
+    }
+    
+    library[selected].addTo(learning);
+    ```
+    
+    ### Add a new shortcut
+    ```
+    library.set(buttons, buttons).
+    library[buttons].set(subject, ['mac','atom','illustrator']);
+    ```
+    key listen 'command shift l' , triggers popup window with shortcut[keyCommandName]
+    key listen 'matching keyCommand to keyCommandName'
+    
+    ```
+    if (key = keyCommand){
+        popup.hide();
+        key
+    }
+    ```

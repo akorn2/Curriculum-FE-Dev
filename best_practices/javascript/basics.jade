@@ -49,3 +49,19 @@ block content
     //-     console.log(list[i]);
     //- }
     ```
+    
+    Question: What is a constructor Function? Application Example   ?
+    Answer: Properties can be set to constructor functions. These properties are accesed from other instance methods. 
+    ```javascript
+    function TagComponent (target, urlPath){
+        this.targetElement = target;
+        this.urlPath = urlPath;
+    }
+    TagComponent.prototype.render = function(){
+        getRequest(this.urlPath), function(data){
+            //..
+        });
+    }
+    let tagComponent = new TagComponent(targetDiv, "/topics/17");
+    tagComponent.render();
+    ```

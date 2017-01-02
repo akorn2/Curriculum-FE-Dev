@@ -1,0 +1,30 @@
+extends ../../views/single_layout
+
+block content
+  h3 Mesh Warp SVG Surface
+  
+  :marked
+    #### Method event.preventDefault()
+    
+    .preventDefault() stops inherint events if possible, while not stoping the callback from running. 
+    
+    
+    Generally we utalize this method inside a callback - to replace a standard event behavior with a new one (declared inside the callback).
+    
+    (.preventDefault() documentation)[https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault]
+    ```
+    <form>
+    <input type="checkbox" id="my-checkbox" />
+    <label for="my-checkbox">Checkbox</label>
+    </form>
+
+    </body>
+
+    <script>
+        function stopDefAction(evt) {
+            evt.preventDefault();
+        }
+        document.getElementById('my-checkbox').addEventListener( 'click', stopDefAction, false );
+    </script>
+    ```
+    (script above in action)[https://developer.mozilla.org/samples/domref/dispatchEvent.html]
